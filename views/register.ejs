@@ -1,0 +1,39 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body text-center">
+      <h1 class="mb-3">
+        <img src="/assets/secure-icon.png" alt="icon" width="20%" />
+      </h1>
+      <h2>
+        Регистрация
+      </h2>
+      <%- include ("./messages") %>
+      <form action="/auth/register" method="POST">
+        <div class="form-group">
+          <label for="name">Имя пользователя</label>
+          <input type="name" id="name" name="name" class="form-control" placeholder="Например Иван"
+            value="<%= typeof name != 'undefined' ? name : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Например vasyapupkin@mail.ru"
+            value="<%= typeof email != 'undefined' ? email : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Пароль"
+            value="<%= typeof password != 'undefined' ? password : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm Password</label>
+          <input type="password" id="password2" name="password2" class="form-control" placeholder="Повторение пароля"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Зарегистрироваться!
+        </button>
+      </form>
+      <p class="mt-4">У вас уже есть аккаунт? <a href="/auth/login">Войти!</a></p>
+    </div>
+  </div>
+</div>
